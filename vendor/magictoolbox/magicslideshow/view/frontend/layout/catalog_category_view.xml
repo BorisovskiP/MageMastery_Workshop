@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="head.additional.magicslideshow">
+            <block class="MagicToolbox\MagicSlideshow\Block\Html\Head" name="magicslideshow-header" template="MagicToolbox_MagicSlideshow::html/head.phtml">
+                <arguments>
+                    <argument name="page" xsi:type="string">category</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="category.product.type.details.renderers">
+            <block class="MagicToolbox\MagicSlideshow\Block\Product\Renderer\Listing\Configurable" name="configurable.magicslideshow" template="Magento_Swatches::product/listing/renderer.phtml" before="-" />
+        </referenceBlock>
+    </body>
+</page>

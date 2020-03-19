@@ -1,0 +1,1 @@
+../mage2tv/magento-cache-clean/bin/cache-clean.js

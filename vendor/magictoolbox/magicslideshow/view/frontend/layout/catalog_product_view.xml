@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="head.additional.magicslideshow">
+            <block class="MagicToolbox\MagicSlideshow\Block\Html\Head" name="magicslideshow-header" template="MagicToolbox_MagicSlideshow::html/head.phtml">
+                <arguments>
+                    <argument name="page" xsi:type="string">product</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="product.info.media">
+            <block class="MagicToolbox\MagicSlideshow\Block\Product\View\Gallery" name="product.info.media.magicslideshow" template="product/view/gallery.phtml" />
+        </referenceContainer>
+
+        <!-- NOTE: to display product.info.media.video after product.info.media.image, product.info.media.magicslideshow, etc -->
+        <move element="product.info.media.video" destination="product.info.media" after="-" />
+    </body>
+</page>
