@@ -227,7 +227,6 @@ return [
         'MSP_TwoFactorAuth' => 1,
         'MageMastery_Todo' => 1,
         'MagicToolbox_MagicSlideshow' => 1,
-        'Sp_Orderattachment' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1,
         'Yotpo_Yotpo' => 1
