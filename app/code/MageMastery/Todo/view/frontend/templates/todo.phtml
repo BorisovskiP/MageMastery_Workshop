@@ -1,5 +1,9 @@
 <?php
+
+declare(strict_types=1);
+
 use Magento\Framework\View\Element\Template;
+
 /** @var Template $block */
 ?>
 <ul>
@@ -7,3 +11,16 @@ use Magento\Framework\View\Element\Template;
     <li>List2</li>
     <li>List3</li>
 </ul>
+<script type="text/x-magento-init">
+    {
+    "*":{
+        "Magento_Ui/js/core/app":{
+            "components": {
+                 "todo": {
+                      "component":"MageMastery_Todo/js/view/todo"
+                     }
+                 }
+            }
+        }
+    }
+</script>
