@@ -11,6 +11,9 @@ use Magento\Framework\View\Element\Template;
     <li>List2</li>
     <li>List3</li>
 </ul>
+<div data-bind="scope: 'todo'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
 <script type="text/x-magento-init">
     {
     "*":{
