@@ -7,7 +7,7 @@ namespace MageMastery\Todo\Api;
 /**
  * @api
  */
-interface TaskMenagementInterface
+interface TaskManagementInterface
 {
     public function save();
 
