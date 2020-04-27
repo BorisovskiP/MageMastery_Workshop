@@ -25,34 +25,43 @@ class TaskRepository implements TaskRepositoryInterface
     private $taskFactory;
 
     /**
-     * @var SearchResultInterfaceFactory
+     * @var TaskSearchResultInterfaceFactory
      */
-    private $searchResultFactory;
+    private $searchResultsFactory;
 
     /**
      * @var CollectionProcessorInterface
      */
     private $collectionProcessor;
 
+    /**
+     * TaskRepository constructor.
+     *
+     * @param Task                             $resource
+     * @param TaskFactory                      $taskFactory
+     * @param CollectionProcessorInterface     $collectionProcessor
+     * @param TaskSearchResultInterfaceFactory $searchResultsFactory
+     */
     public function __construct(
         Task $resource,
         TaskFactory $taskFactory,
         CollectionProcessorInterface $collectionProcessor,
-        TaskSearchResultInterfaceFactory $searchResultFactory
+        TaskSearchResultInterfaceFactory $searchResultsFactory
     ) {
-        $this->resource            = $resource;
-        $this->taskFactory         = $taskFactory;
-        $this->collectionProcessor = $collectionProcessor;
+        $this->resource             = $resource;
+        $this->taskFactory          = $taskFactory;
+        $this->collectionProcessor  = $collectionProcessor;
+        $this->searchResultsFactory = $searchResultsFactory;
     }
 
     public function getList(SearchCriteriaInterface $searchCriteria): TaskSearchResultInterface
     {
-        $searchResult = $this->searchResultFactory->create();
-        $searchCriteria->setSearchCriteria($searchCriteria);
+        $searchResult = $this->searchResultsFactory->create();
+        $searchResult->setSearchCriteria($searchCriteria);
+
         $this->collectionProcessor->process($searchCriteria, $searchResult);
 
         return $searchResult;
-
     }
 
     public function get(int $taskId)

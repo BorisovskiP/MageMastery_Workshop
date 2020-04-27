@@ -12,14 +12,12 @@ use Magento\Framework\Api\SearchResultsInterface;
 interface TaskSearchResultInterface extends SearchResultsInterface
 {
     /**
-     * @return TaskInterface
+     * @return TaskInterface[]
      */
-    public function getItems(): TaskInterface;
+    public function getItems(): array;
 
     /**
      * @param TaskInterface[] $items
-     *
-     * @return SearchResultsInterface
      */
-    public function setItems(array $items): SearchResultsInterface;
+    public function setItems(array $items = null);
 }
