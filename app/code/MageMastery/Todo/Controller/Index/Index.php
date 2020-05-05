@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace MageMastery\Todo\Controller\Index;
 
+use MageMastery\Todo\Model\ResourceModel\Task as TaskResource;
+use MageMastery\Todo\Model\Task;
+use MageMastery\Todo\Model\TaskFactory;
 use MageMastery\Todo\Service\TaskRepository;
+use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
-use MageMastery\Todo\Model\Task;
-use MageMastery\Todo\Model\TaskFactory;
-use MageMastery\Todo\Model\ResourceModel\Task as TaskResource;
 
 class Index extends Action
 {
@@ -18,41 +19,40 @@ class Index extends Action
 
     private $taskFactory;
 
-    /**
-     * @var TaskRepository
-     */
-    private $taskReposotiry;
+    private $taskRepository;
 
     /**
-     * @var TaskRepository
+     * @var SearchCriteriaBuilder
      */
-    private $taskRepository;
+    private $searchCriteriaBuilder;
 
     public function __construct(
         Context $context,
         TaskFactory $taskFactory,
-        TaskResource $taskResource,
-        TaskRepository $taskRepository
+        TaskResource $task,
+        TaskRepository $repository,
+        SearchCriteriaBuilder $searchCriteriaBuilder
     ) {
-        $this->taskFactory  = $taskFactory;
-        $this->taskResource = $taskResource;
-
+        $this->taskFactory           = $taskFactory;
+        $this->taskResource          = $task;
+        $this->taskRepository        = $repository;
+        $this->searchCriteriaBuilder = $searchCriteriaBuilder;
         parent::__construct($context);
-        $this->taskRepository = $taskRepository;
+
     }
 
     public function execute()
     {
-        $task = $this->taskRepository->get(1);
-        var_dump($task->getData());
-//        $task = $this->taskFactory->create();
-//        $task->setData([
-//            'label'       => 'New Task 22',
-//            'status'      => 'open',
-//            'customer_id' => 1
-//        ]);
-//        $this->taskResource->save($task);
-
+        var_dump($this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems());
+        //        $task = $this->taskFactory->create();
+        //
+        //        $task->setData([
+        //            'label' => 'New Task 3',
+        //            'status' => 'open',
+        //            'customer_id' => 1
+        //        ]);
+        //
+        //        $this->taskResource->save($task);
         return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
 }
