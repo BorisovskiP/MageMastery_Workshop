@@ -12,4 +12,10 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
+    <route method="POST" url="/V1/customer/todo/tasks/delete">
+        <service class="MageMastery\Todo\Api\TaskManagementInterface" method="delete"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
 </routes>
