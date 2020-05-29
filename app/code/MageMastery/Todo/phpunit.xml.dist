@@ -1,0 +1,7 @@
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/6.2/phpunit.xsd"
+         verbose="true">
+    <testsuite name="Mage Mastery Unit Tests">
+        <directory suffix="Test.php">Test/Unit</directory>
+    </testsuite>
+</phpunit>
