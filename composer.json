@@ -13,6 +13,7 @@
     "require": {
         "fooman/emailattachments-implementation-m2": "106.0.*",
         "fooman/tcpdf": "^6.3",
+        "magemastery/todo": "^1.0",
         "magento/product-community-edition": "2.3.3",
         "magictoolbox/magicslideshow": "^1.6"
     },
@@ -66,9 +67,10 @@
     "version": "2.3.3",
     "minimum-stability": "stable",
     "repositories": {
-        "private-packagist": {
-            "type": "composer",
-            "url": "https://repo.packagist.com/customgento/sunliner-m2/"
+        "packagist.org": false,
+        "local-packages": {
+            "type": "path",
+            "url": "./app/*/*/*"
         }
     },
     "extra": {

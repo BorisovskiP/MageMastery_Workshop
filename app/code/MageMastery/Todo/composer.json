@@ -1,0 +1,34 @@
+{
+    "name": "magemastery/todo",
+    "description": "Todo extension for Magento 2",
+    "type": "magento2-module",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Petar Borisovski",
+            "email": "petar@customgento.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "magento/framework": "~102.0",
+        "magento/module-customer": "~102.0",
+        "magento/module-ui": "~101.1",
+        "magento/module-webapi": "~100.3"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageMastery\\Todo\\": ""
+        }
+    }
+}

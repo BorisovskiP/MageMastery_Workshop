@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5533e3df48267a9b2354fbb39b47673c",
+    "content-hash": "36142b5472d7733a3ac3dbbdf31f6001",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -2230,6 +2230,43 @@
                 }
             ],
             "description": "Klarna Order Management Magento 2 Extension"
+        },
+        {
+            "name": "magemastery/todo",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "./app/code/MageMastery/Todo",
+                "reference": "6cb53e2f7205d54062c63d7139d9d40a460636a5"
+            },
+            "require": {
+                "magento/framework": "~102.0",
+                "magento/module-customer": "~102.0",
+                "magento/module-ui": "~101.1",
+                "magento/module-webapi": "~100.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageMastery\\Todo\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Petar Borisovski",
+                    "email": "petar@customgento.com"
+                }
+            ],
+            "description": "Todo extension for Magento 2",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "magento/composer",
